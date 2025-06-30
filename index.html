@@ -1,1 +1,486 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内子町地域おこし協力隊募集 | 内子高校魅力化事業</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c5282 0%, #4a90e2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        header .highlight {
+            background: rgba(255,255,255,0.2);
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .intro {
+            padding: 40px 30px;
+            background: #f7f9fc;
+            border-left: 5px solid #4a90e2;
+        }
+        
+        .intro h2 {
+            color: #2c5282;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .intro-text {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        .positions {
+            padding: 40px 30px;
+        }
+        
+        .positions h2 {
+            text-align: center;
+            color: #2c5282;
+            margin-bottom: 40px;
+            font-size: 1.8rem;
+        }
+        
+        .position-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .position-card {
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .position-card:hover {
+            border-color: #4a90e2;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
+        }
+        
+        .position-card h3 {
+            color: #2c5282;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-align: center;
+            padding: 10px;
+            background: #f0f4f8;
+            border-radius: 8px;
+        }
+        
+        .position-card .role {
+            margin-bottom: 20px;
+        }
+        
+        .position-card .role h4 {
+            color: #4a90e2;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .position-card .role ul {
+            list-style: none;
+            padding-left: 15px;
+        }
+        
+        .position-card .role ul li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .position-card .role ul li:before {
+            content: "▸";
+            color: #4a90e2;
+            position: absolute;
+            left: -15px;
+        }
+        
+        .common-info {
+            background: #f7f9fc;
+            padding: 40px 30px;
+            margin-top: 30px;
+        }
+        
+        .common-info h2 {
+            color: #2c5282;
+            margin-bottom: 30px;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .info-section h3 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        
+        .info-section p, .info-section ul {
+            margin-bottom: 15px;
+        }
+        
+        .info-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .info-section ul li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .info-section ul li:before {
+            content: "●";
+            color: #4a90e2;
+            position: absolute;
+            left: 0;
+        }
+        
+        .salary-table {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .salary-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .salary-table th {
+            background: #4a90e2;
+            color: white;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .salary-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .application {
+            padding: 40px 30px;
+            background: #2c5282;
+            color: white;
+        }
+        
+        .application h2 {
+            margin-bottom: 30px;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+        
+        .application-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .application-section h3 {
+            color: #a2d2ff;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .deadlines {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .deadlines h4 {
+            margin-bottom: 15px;
+            color: #a2d2ff;
+        }
+        
+        .deadlines ul {
+            list-style: none;
+        }
+        
+        .deadlines ul li {
+            margin-bottom: 8px;
+            padding: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+        
+        .contact {
+            background: #1a365d;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .contact h3 {
+            margin-bottom: 20px;
+            color: #a2d2ff;
+        }
+        
+        .contact-info {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .position-cards, .info-grid, .application-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                margin: 0;
+            }
+            
+            header, .intro, .positions, .common-info, .application, .contact {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>内子町地域おこし協力隊募集</h1>
+            <div class="subtitle">内子高等学校魅力化事業</div>
+            <div class="highlight">令和8年4月採用 | 2職種同時募集</div>
+        </header>
 
+        <section class="intro">
+            <h2>内子高校魅力化プロジェクトについて</h2>
+            <div class="intro-text">
+                愛媛県立内子高等学校（本校）は令和2年に創立100周年を迎えた歴史ある学校です。しかし、少子化の影響により入学者数が減少し、存続の危機に直面しています。そこで内子町では、内子高校の魅力化事業を展開し、学校の存続と発展を目指しています。<br><br>
+                この度、魅力化事業の推進において重要な役割を担う地域おこし協力隊を募集いたします。教育への情熱と地域への愛着を持った方々のご応募をお待ちしております。
+            </div>
+        </section>
+
+        <section class="positions">
+            <h2>募集職種</h2>
+            <div class="position-cards">
+                <div class="position-card">
+                    <h3>学習センタースタッフ</h3>
+                    <div class="role">
+                        <h4>主な業務内容</h4>
+                        <ul>
+                            <li>内子町学習センター（公営塾）の運営</li>
+                            <li>国語・数学・英語の学習支援</li>
+                            <li>中学までの基礎学力向上支援</li>
+                            <li>学校推薦・総合型選抜入試対策</li>
+                        </ul>
+                    </div>
+                    <div class="role">
+                        <h4>求める人物像</h4>
+                        <ul>
+                            <li>高校生に寄り添える方</li>
+                            <li>異なる立場の人と協働できる方</li>
+                            <li>塾講師経験者、または教育に興味がある方</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="position-card">
+                    <h3>高校魅力化コーディネーター</h3>
+                    <div class="role">
+                        <h4>主な業務内容</h4>
+                        <ul>
+                            <li>学習センターと学校・地域・役場の調整</li>
+                            <li>魅力化ワーキンググループ会議の調整</li>
+                            <li>内子高校独自の授業づくり支援</li>
+                            <li>魅力化活動の情報発信</li>
+                            <li>町内中学生への宣伝活動</li>
+                        </ul>
+                    </div>
+                    <div class="role">
+                        <h4>求める人物像</h4>
+                        <ul>
+                            <li>相手の背景や文化を尊重できる方</li>
+                            <li>チームで協働して活動できる方</li>
+                            <li>前向きに粘り強く取り組める方</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="common-info">
+            <h2>共通募集要項</h2>
+            <div class="info-grid">
+                <div class="info-section">
+                    <h3>勤務地・活動エリア</h3>
+                    <p><strong>出勤場所：</strong>内子高校</p>
+                    <p><strong>活動エリア：</strong>内子高校校内をはじめ町内</p>
+                </div>
+
+                <div class="info-section">
+                    <h3>勤務時間</h3>
+                    <ul>
+                        <li>1日7時間、週5日勤務</li>
+                        <li>休日：週2日、祝日、年末年始</li>
+                        <li>有給休暇・特別休暇あり</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>応募資格</h3>
+                    <ul>
+                        <li>都市地域等からの移住が可能な方</li>
+                        <li>普通自動車免許取得者</li>
+                        <li>地域住民と協力して活動できる方</li>
+                        <li>雇用期間終了後も内子町で定住意欲がある方</li>
+                        <li>基本的なパソコン操作ができる方</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>雇用形態・期間</h3>
+                    <ul>
+                        <li>内子町会計年度任用職員（パートタイム）</li>
+                        <li>期間：令和8年4月1日〜令和9年3月31日</li>
+                        <li>最長3年まで更新可能</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>給与</h3>
+                    <div class="salary-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>年次</th>
+                                    <th>月額</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1年目</td>
+                                    <td>199,400円</td>
+                                </tr>
+                                <tr>
+                                    <td>2年目</td>
+                                    <td>202,700円</td>
+                                </tr>
+                                <tr>
+                                    <td>3年目</td>
+                                    <td>206,100円</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><small>※社会保険料等自己負担分含む<br>※年2回の期末・勤勉手当あり</small></p>
+                </div>
+
+                <div class="info-section">
+                    <h3>待遇・福利厚生</h3>
+                    <ul>
+                        <li>各種社会保険完備</li>
+                        <li>家賃全額補助（上限あり）</li>
+                        <li>燃料費支給</li>
+                        <li>パソコン貸与</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="application">
+            <h2>応募方法</h2>
+            <div class="application-grid">
+                <div class="application-section">
+                    <h3>提出書類</h3>
+                    <p>履歴書と職務経歴書をご提出ください。</p>
+                    
+                    <h3>提出先</h3>
+                    <p><strong>株式会社PrimaPinguino 採用担当</strong></p>
+                    <p>Email: recruit@pripin.co.jp</p>
+                    <p>※メールにてお送りください</p>
+                </div>
+
+                <div class="application-section">
+                    <h3>選考方法</h3>
+                    <ul>
+                        <li><strong>1次・2次選考：</strong>書類選考＋オンライン面接</li>
+                        <li><strong>最終選考：</strong>内子町での面接</li>
+                    </ul>
+                    <p><small>※最終選考の交通費・宿泊費は自己負担</small></p>
+                </div>
+            </div>
+
+            <div class="deadlines">
+                <h4>応募締切（随時募集・5段階締切）</h4>
+                <ul>
+                    <li>第1回：7月7日（月）</li>
+                    <li>第2回：7月28日（月）</li>
+                    <li>第3回：9月5日（金）</li>
+                    <li>第4回：10月10日（金）</li>
+                    <li>第5回：11月5日（水）</li>
+                </ul>
+                <p><small>※採用が決定次第、応募は終了となります</small></p>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h3>お問い合わせ</h3>
+            <div class="contact-info">
+                内子町役場 企画情報課<br>
+                〒795-0392 愛媛県喜多郡内子町平岡甲168番地<br>
+                TEL: 0893-44-6151（直通）<br>
+                Email: kikaku@town.uchiko.ehime.jp
+            </div>
+        </section>
+    </div>
+</body>
+</html>
